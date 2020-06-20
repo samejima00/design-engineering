@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!-- スマホで見やすくする設定 -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- ブラウザのタブに表示されるタイトル -->
+<title>テンプレート</title>
+<style>
+    #rico {
+        transform: scale(1, -1);
+        position: absolute;
+        top: -30px;
+        left: 200px;
+        z-index: 100;
+        width: 50%;    /* 横幅を割合で指定 */
+        height: auto;
+    }
+    #rico2 {
+        transform: scale(1, -1);
+        position: absolute;
+        top: 70px;
+        left: 250px;
+        width: 21%;    /* 横幅を割合で指定 */
+        height: auto;
+    }
+</style>
+</head>
+ 
+<body bgcolor="black">
+<!-- ここにボタンなどの UI 部品を置く -->
+<div id="wrapper"></div>
+<h1>テンプレート</h1>
+<script>
+    var timestamp = new Date().getTime();
+    var img = document.createElement('img');
+    var gifs_src = new Array("kansei.gif?"+timestamp,"kansei.gif?"+timestamp+1);
+    var num = 0;
+    slideshow_timer();
+ 
+            function slideshow_timer(){
+                if (num == 1){
+                    img.id = "rico";
+                    num = 0;
+                } 
+                else {
+                    img.id="rico2";
+                    num ++;
+                }
+                img.src=gifs_src[num];
+                wrapper.textContent = null;
+                wrapper.appendChild(img);
+                setTimeout("slideshow_timer()",3000); 
+            }
+
+</script>
+</body>
+</html>
