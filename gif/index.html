@@ -5,12 +5,13 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="0">
+<meta name="robots" content="noindex">
 <!-- スマホで見やすくする設定 -->
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <!-- ブラウザのタブに表示されるタイトル -->
 <title>テンプレート</title>
 <style>
-    #rico {
+    #suiteki1 {
         transform: scale(1, -1);
         position: absolute;
         top: -30px;
@@ -19,7 +20,7 @@
         width: 50%;    /* 横幅を割合で指定 */
         height: auto;
     }
-    #rico2 {
+    #suiteki2 {
         transform: scale(1, -1);
         position: absolute;
         top: 70px;
@@ -32,30 +33,34 @@
  
 <body bgcolor="black">
 <!-- ここにボタンなどの UI 部品を置く -->
-<div id="wrapper"></div>
+<img id="suiteki1" src="clear.png">
+<img id="suiteki2" src="clear.png">
+
 <h1>テンプレート</h1>
 <script>
-    var timestamp = new Date().getTime();
-    var img = document.createElement('img');
-    var gifs_src = new Array("kansei.gif?"+timestamp,"kansei.gif?"+timestamp+1);
-    var num = 0;
-    slideshow_timer();
- 
-            function slideshow_timer(){
-                if (num == 1){
-                    img.id = "rico";
-                    num = 0;
-                } 
-                else {
-                    img.id="rico2";
-                    num ++;
-                }
-                img.src=gifs_src[num];
-                wrapper.textContent = null;
-                wrapper.appendChild(img);
-                setTimeout("slideshow_timer()",3000); 
-            }
 
+    var timestamp = new Date().getTime();
+    var num = 0;
+    var s1 = document.getElementById('suiteki1');
+    var s2 = document.getElementById('suiteki2');
+    slideshow_timer();
+    //document.getElementById('suiteki1').innerHTML = '<img id="suiteki1" src="suiiteki.gif">';
+ function slideshow_timer(){
+     if (num == 1){
+         //img.id = "suiteki1";
+         num=0;
+         suiteki1.src = "kansei.gif?"+timestamp;
+         document.getElementById('suiteki1').innerHTML = '<img id="suiteki1" src="kansei.gif">';
+     } 
+     else {
+         //img.id="suiteki2";
+         num ++;
+         suiteki2.src = "kansei2.gif?"+timestamp;
+         document.getElementById('suiteki1').innerHTML = '<img id="suiteki2" src="kansei2.gif">';
+     }
+
+     setTimeout("slideshow_timer()",2000); 
+ }
 </script>
 </body>
 </html>

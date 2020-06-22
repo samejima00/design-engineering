@@ -1,0 +1,29 @@
+document.write('<img id="rico" src="kansei.gif">');
+
+    img.id = "rico";
+    img.src = 'kansei.gif?' + timestamp;
+    wrapper.textContent = null;
+    wrapper.appendChild(img);
+
+
+
+       var timestamp = new Date().getTime();
+    var img = document.createElement('img');
+    var gifs_src = new Array("kansei.gif?"+timestamp,"kansei.gif?"+timestamp+1);
+    var num = 0;
+    slideshow_timer();
+ 
+            function slideshow_timer(){
+                if (num == 1){
+                    img.id = "suiteki1";
+                    num = 0;
+                } 
+                else {
+                    img.id="suiteki2";
+                    num ++;
+                }
+                img.src=gifs_src[num];
+                wrapper.textContent = null;
+                wrapper.appendChild(img);
+                setTimeout("slideshow_timer()",5000); 
+            }
