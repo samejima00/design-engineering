@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- スマホで見やすくする設定 -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- ブラウザのタブに表示されるタイトル -->
+<title>テンプレート</title>
+</head>
+ 
+<body>
+<!-- ここにボタンなどの UI 部品を置く -->
+<div id="txt">ここにデータを表示</div>   
+<video id="video"  playsinline autoplay poster="clear.png" width=80%>
+    <source src="start_1.mp4" type="video/mp4">
+    <p>※ご利用のブラウザでは再生することができません。</p>
+ </video>
+<script>
+
+document.addEventListener("click", function() { DeviceMotionEvent.requestPermission(); });
+var aX = 0, aY = 0, aZ = 0, aZ2 = 0;             // ジャイロの値を入れる変数を3個用意
+var txt = document.getElementById("txt");   // データを表示するdiv要素の取得
+video.load();
+function playvideo() {
+    video.play();
+};
+document.addEventListener("click",playvideo,false);
+// ジャイロセンサの値が変化したら実行される deviceorientation イベント
+window.addEventListener("devicemotion", (dat) => {
+    aX = dat.accelerationIncludingGravity.x;    // x軸の重力加速度（Android と iOSでは正負が逆）
+    aY = dat.accelerationIncludingGravity.y;    // y軸の重力加速度（Android と iOSでは正負が逆）
+    aZ = dat.accelerationIncludingGravity.z;    // z軸の重力加速度（Android と iOSでは正負が逆）
+
+    //txt.innerHTML = Math.abs(aZ-aZ2) + "<br>"+aZ+"<br>"+aZ2;
+    if(Math.abs(aZ-aZ2)>2){
+        var event = document.createEvent( "MouseEvents" ); // イベントオブジェクトを作成
+        event.initEvent("click", false, true); // イベントの内容を設定
+        document.dispatchEvent(event);
+    }
+    aZ2=aZ;
+
+    }
+);
+
+
+</script>
+</body>
+</html>
+

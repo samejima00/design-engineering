@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- スマホで見やすくする設定 -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- ブラウザのタブに表示されるタイトル -->
+<title>テンプレート</title>
+</head>
+ 
+<body>
+<!-- ここにボタンなどの UI 部品を置く -->
+<h1>テンプレート</h1>
+<video id="video" src="start.mp4" class="video-background"  playsinline autoplay></video>
+<video preload="yes" width='100%' height='100%'>
+    <source src="start.mp4" type="video/mp4">
+</video>
+<script>
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- スマホで見やすくする設定 -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- ブラウザのタブに表示されるタイトル -->
+<title>テンプレート</title>
+</head>
+ 
+<body>
+<!-- ここにボタンなどの UI 部品を置く -->
+<h1>テンプレート</h1>
+<div>
+    <audio id="audio" src="bgm2_1.mp3" preload="auto"  ></audio>
+    <button id="play">Play</button>
+    <button id="stop">Stop</button>
+</div>
+<script>
+var playBtn = document.getElementById('play');
+var stopBtn = document.getElementById('stop');
+
+var playSound = function () {
+    audio.load();
+    setTimeout(function () {
+        audio.play();
+    }, 200);
+};
+
+playBtn.addEventListener('click', playSound, false);
+stopBtn.addEventListener('click', function () {
+    audio.pause()
+}, false);
+
+playBtn.addEventListener('click', playSound, false);
+stopBtn.addEventListener('click', function(){audio.pause()}, false);
+</script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- スマホで見やすくする設定 -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- ブラウザのタブに表示されるタイトル -->
+<title>テンプレート</title>
+</head>
+ 
+<body>
+<!-- ここにボタンなどの UI 部品を置く -->
+<h1>テンプレート</h1>
+
+<video id="video"  playsinline autoplay loop>
+   <source src="start_1.mp4" type="video/mp4">
+   <p>※ご利用のブラウザでは再生することができません。</p>
+</video>
+<button id="play">Play</button>
+<button id="stop">Stop</button>
+</div>
+<script>
+var playBtn = document.getElementById('play');
+var stopBtn = document.getElementById('stop');
+var playSound = function () {
+    video.load();
+    setTimeout(function () {
+        video.play();
+    }, 200);
+};
+
+document.addEventListener('touchstart', playSound, false);
+
+
+</script>
+</body>
+</html>
