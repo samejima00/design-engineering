@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="noindex">
+<!-- スマホで見やすくする設定 -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- ブラウザのタブに表示されるタイトル -->
+<title>テンプレート</title>
+<style>
+    #suiteki1_r {
+        transform: rotate( 180deg );
+        position: absolute;
+        bottom: 425px;
+        left: 180px;
+        z-index: 100;
+        width: 80%;    /* 横幅を割合で指定 */
+        height: auto;
+    }
+
+    #suiteki2_r {
+        transform: rotate(180deg);
+        position: absolute;
+        z-index: 101;
+        height: auto;
+        bottom: 710px;
+        left: 400px;
+        width: 40%;
+    }
+    #suiteki3_r {
+        transform: rotate(180deg);
+        position: absolute;
+        z-index: 101;
+        bottom: 725px;
+        left: 350px;
+        width: 30%;
+        height: auto;
+    }
+    #suiteki4_r {
+        transform: rotate( 180deg );
+        position: absolute;
+        height: auto;
+        bottom: 680px;
+        left: 330px;
+        width: 40%;
+        z-index: 101;
+    }
+
+    #suiteki5_r {
+        transform: rotate(180deg);
+        position: absolute;
+        z-index: 101;
+        height: auto;
+        bottom: 425px;
+        left: 100px;
+        z-index: 100;
+        width: 80%;
+    }
+    #suiteki6_r {
+        transform: rotate(180deg);
+        position: absolute;
+        z-index: 101;
+        height: auto;
+        bottom: 710px;
+        left: 360px;
+        width: 30%;
+    }
+    #suiteki7_r {
+        transform: rotate( 180deg );
+        position: absolute;
+        height: auto;
+        bottom: 710px;
+        left: 350px;
+        width: 40%;
+        z-index: 101;
+    }
+
+    #suiteki8_r {
+        transform: rotate(180deg);
+        position: absolute;
+        z-index: 101;
+        bottom: 740px;
+        left: 450px;
+        width: 30%;    /* 横幅を割合で指定 */
+        height: auto;
+    }
+    #suiteki9_r {
+        transform: rotate(180deg);
+        position: absolute;
+        z-index: 101;
+        height: auto;
+        bottom: 425px;
+        left: 80px;
+        z-index: 100;
+        width: 80%;
+    }
+    
+
+    #suiteki1_t {
+        transform: rotate(90deg);
+        position: absolute;
+        top: 170px;
+        left: -40px;
+        z-index: 100;
+        width: 80%;    
+        height: auto;
+    }
+    
+    #suiteki2_t {
+        transform: rotate(90deg);
+        position: absolute;
+        top: 150px;
+        left: 20px;
+        width: 60%;    /* 横幅を割合で指定 */
+        height: auto;
+        z-index: 101;
+    }
+    #suiteki3_t {
+        transform: rotate(90deg);
+        position: absolute;
+        top: 300px;
+        left: 100px;
+        width: 40%;    /* 横幅を割合で指定 */
+        height: auto;
+        z-index: 101;
+    }
+    #suiteki4_t {
+        transform: rotate(90deg);
+        position: absolute;
+        top: 400px;
+        left: 20px;
+        z-index: 100;
+        width: 60%;    
+        height: auto;
+    }
+    
+    #suiteki5_t {
+        transform: rotate(90deg);
+        position: absolute;
+        top: 0px;
+        left: -40px;
+        width: 80%;    /* 横幅を割合で指定 */
+        height: auto;
+        z-index: 101;
+    }
+    #suiteki6_t {
+        transform: rotate(90deg);
+        position: absolute;
+        top: 450px;
+        left: 100px;
+        width: 40%;    /* 横幅を割合で指定 */
+        height: auto;
+        z-index: 101;
+    }
+    #suiteki7_t {
+        transform: rotate(90deg);
+        position: absolute;
+        top: 290px;
+        left: 20px;
+        z-index: 100;
+        width: 60%;    
+        height: auto;
+    }
+    
+    #suiteki8_t {
+        transform: rotate(90deg);
+        position: absolute;
+        top: 250px;
+        left: 100px;
+        width: 40%;    /* 横幅を割合で指定 */
+        height: auto;
+        z-index: 101;
+    }
+    #suiteki9_t {
+        transform: rotate(90deg);
+        position: absolute;
+        top: 350px;
+        left: -40px;
+        width: 80%;    /* 横幅を割合で指定 */
+        height: auto;
+        z-index: 101;
+    }
+
+    #suiteki1_l {
+        position: absolute;
+        top: 425px;
+        left: 180px;
+        z-index: 100;
+        width: 80%;    /* 横幅を割合で指定 */
+        height: auto;
+        z-index: 101;
+    }
+
+    #suiteki2_l {
+        position: absolute;
+        z-index: 101;
+        height: auto;
+        top: 705px;
+        left: 380px;
+        width: 40%;
+    }
+    #suiteki3_l {
+        position: absolute;
+        z-index: 101;
+        top: 725px;
+        left: 350px;
+        width: 30%;
+        height: auto;
+    }
+    #suiteki4_l {
+        position: absolute;
+        height: auto;
+        z-index: 101;
+        top: 680px;
+        left: 330px;
+        width: 40%;
+    }
+
+    #suiteki5_l {
+        position: absolute;
+        z-index: 101;
+        height: auto;
+        top: 415px;
+        left: 100px;
+        z-index: 100;
+        width: 80%;
+    }
+    #suiteki6_l {
+        position: absolute;
+        z-index: 101;
+        height: auto;
+        top: 710px;
+        left: 360px;
+        width: 30%;
+    }
+    #suiteki7_l {
+        position: absolute;
+        height: auto;
+        top: 705px;
+        left: 350px;
+        width: 40%;
+        z-index: 101;
+    }
+
+    #suiteki8_l {
+        position: absolute;
+        z-index: 101;
+        top: 735px;
+        left: 470px;
+        width: 30%;    /* 横幅を割合で指定 */
+        height: auto;
+    }
+    #suiteki9_l {
+        position: absolute;
+        z-index: 101;
+        height: auto;
+        top: 425px;
+        left: 80px;
+        z-index: 100;
+        width: 80%;
+    }
+
+    #video{                      /*ここ変えなきゃだぞ*/
+        transform: rotate(90deg);
+        position: absolute;
+        top:110px;
+        left:-100px;
+        width:130%;
+    }
+
+</style>
+</head>
+ 
+<body bgcolor="black">
+<!-- ここにボタンなどの UI 部品を置く -->
+<img id="suiteki1_r" src="clear.png">
+<img id="suiteki2_r" src="clear.png">
+<img id="suiteki3_r" src="clear.png">
+<img id="suiteki4_r" src="clear.png">
+<img id="suiteki5_r" src="clear.png">
+<img id="suiteki6_r" src="clear.png">
+<img id="suiteki7_r" src="clear.png">
+<img id="suiteki8_r" src="clear.png">
+<img id="suiteki9_r" src="clear.png">
+
+<img id="suiteki1_t" src="clear.png">
+<img id="suiteki2_t" src="clear.png">
+<img id="suiteki3_t" src="clear.png">
+<img id="suiteki4_t" src="clear.png">
+<img id="suiteki5_t" src="clear.png">
+<img id="suiteki6_t" src="clear.png">
+<img id="suiteki7_t" src="clear.png">
+<img id="suiteki8_t" src="clear.png">
+<img id="suiteki9_t" src="clear.png">
+
+<img id="suiteki1_l" src="clear.png">
+<img id="suiteki2_l" src="clear.png">
+<img id="suiteki3_l" src="clear.png">
+<img id="suiteki4_l" src="clear.png">
+<img id="suiteki5_l" src="clear.png">
+<img id="suiteki6_l" src="clear.png">
+<img id="suiteki7_l" src="clear.png">
+<img id="suiteki8_l" src="clear.png">
+<img id="suiteki9_l" src="clear.png">
+<!--<iframe src="https://raw.githubusercontent.com/anars/blank-audio/master/500-milliseconds-of-silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+-->
+    <div>
+    <audio id="sui1" src="sui.mp3" preload="auto"  ></audio>
+    <audio id="sui2" src="sui2.mp3" preload="auto"  ></audio>
+    <audio id="sui3" src="sui3.mp3" preload="auto"  ></audio>
+
+    <video id="video"  playsinline autoplay poster="clear.png" width=80%>
+        <source src="start_111.mp4" type="video/mp4">
+        <p>※ご利用のブラウザでは再生することができません。</p>
+     </video>
+</div>
+<h1>テンプレート</h1>
+<script>
+
+    var timestamp = new Date().getTime();
+    var num = 0;
+    var t = 3000;
+    var flag = 0;
+
+    document.addEventListener("click", function() { DeviceMotionEvent.requestPermission(); });
+    var aX = 0, aY = 0, aZ = 0, aZ2 = 0;             // ジャイロの値を入れる変数を3個用意
+    video.load();
+    function playvideo() {
+        video.play();
+        setTimeout(function(){t=3000;},17000);
+    };
+
+   document.addEventListener('click', clicked, false);  
+   //document.addEventListener('touchstart', slideshow_timer, false); 
+
+   video.addEventListener("click",playvideo,false);
+    // ジャイロセンサの値が変化したら実行される deviceorientation イベント
+    window.addEventListener("devicemotion", (dat) => {
+        aX = dat.accelerationIncludingGravity.x;    // x軸の重力加速度（Android と iOSでは正負が逆）
+        aY = dat.accelerationIncludingGravity.y;    // y軸の重力加速度（Android と iOSでは正負が逆）
+        aZ = dat.accelerationIncludingGravity.z;    // z軸の重力加速度（Android と iOSでは正負が逆）
+
+        //txt.innerHTML = Math.abs(aZ-aZ2) + "<br>"+aZ+"<br>"+aZ2;
+        if(Math.abs(aZ-aZ2)>2){
+            var event = document.createEvent( "MouseEvents" ); // イベントオブジェクトを作成
+            event.initEvent("click", false, true); // イベントの内容を設定
+            video.dispatchEvent(event);
+            //setTimeout("clicked()",17000);
+        }
+        aZ2=aZ;
+
+        }
+    );
+
+ function clicked(){
+    num=0;
+     if(flag==1){
+         flag=2;
+     }
+     slideshow_timer();
+ }
+
+ function slideshow_timer(){
+    if(flag==0){
+         flag=1;
+     }
+     if(flag==2){
+         flag=1;
+         return;
+     }
+     sui1.load();
+     sui2.load();
+     sui3.load();
+     switch (num) {
+         case 0:
+            sui1.play();
+            num++;
+            var src = "kansei.gif?"+timestamp;
+            suiteki1_r.src = src;
+            suiteki1_t.src = src;
+            suiteki1_l.src = src;
+            document.getElementById('suiteki1_r').innerHTML = '<img src="kansei.gif">';
+            document.getElementById('suiteki1_t').innerHTML = '<img src="kansei.gif">';
+            document.getElementById('suiteki1_l').innerHTML = '<img src="kansei.gif">';
+             //sui2.load();
+             break;
+         case 1:
+            sui2.play();
+            num++;
+            var src = "kansei2.gif?"+timestamp;
+            suiteki2_r.src = src;
+            suiteki2_t.src = src;
+            suiteki2_l.src = src;
+            document.getElementById('suiteki2_r').innerHTML = '<img src="kansei2.gif">';
+            document.getElementById('suiteki2_t').innerHTML = '<img src="kansei2.gif">';
+            document.getElementById('suiteki2_l').innerHTML = '<img src="kansei2.gif">';
+            //sui3.load();
+            break;
+        case 2:
+            sui3.play();
+            num++;
+            var src = "kansei3.gif?"+timestamp;
+            suiteki3_r.src = src;
+            suiteki3_t.src = src;
+            suiteki3_l.src = src;
+            document.getElementById('suiteki3_r').innerHTML = '<img src="kansei3.gif">';
+            document.getElementById('suiteki3_t').innerHTML = '<img src="kansei3.gif">';
+            document.getElementById('suiteki3_l').innerHTML = '<img src="kansei3.gif">';
+            break;
+         case 3:
+            sui3.play();
+            num++;
+            var src = "kansei4.gif?"+timestamp;
+            suiteki4_r.src = src;
+            suiteki4_t.src = src;
+            suiteki4_l.src = src;
+            document.getElementById('suiteki4_r').innerHTML = '<img src="kansei4.gif">';
+            document.getElementById('suiteki4_t').innerHTML = '<img src="kansei4.gif">';
+            document.getElementById('suiteki4_l').innerHTML = '<img src="kansei4.gif">';
+            break;
+        case 4:
+            sui3.play();
+            num++;
+            var src = "kansei5.gif?"+timestamp;
+            suiteki5_r.src = src;
+            suiteki5_t.src = src;
+            suiteki5_l.src = src;
+            document.getElementById('suiteki5_r').innerHTML = '<img src="kansei5.gif">';
+            document.getElementById('suiteki5_t').innerHTML = '<img src="kansei5.gif">';
+            document.getElementById('suiteki5_l').innerHTML = '<img src="kansei5.gif">';
+            break;
+        case 5:
+            sui3.play();
+            num++;
+            var src = "kansei6.gif?"+timestamp;
+            suiteki6_r.src = src;
+            suiteki6_t.src = src;
+            suiteki6_l.src = src;
+            document.getElementById('suiteki6_r').innerHTML = '<img src="kansei6.gif">';
+            document.getElementById('suiteki6_t').innerHTML = '<img src="kansei6.gif">';
+            document.getElementById('suiteki6_l').innerHTML = '<img src="kansei6.gif">';
+            break;
+        case 6:
+            sui3.play();
+            num++;
+            var src = "kansei7.gif?"+timestamp;
+            suiteki7_r.src = src;
+            suiteki7_t.src = src;
+            suiteki7_l.src = src;
+            document.getElementById('suiteki7_r').innerHTML = '<img src="kansei7.gif">';
+            document.getElementById('suiteki7_t').innerHTML = '<img src="kansei7.gif">';
+            document.getElementById('suiteki7_l').innerHTML = '<img src="kansei7.gif">';
+            break;
+        case 7:
+            sui3.play();
+            num++;
+            var src = "kansei8.gif?"+timestamp;
+            suiteki8_r.src = src;
+            suiteki8_t.src = src;
+            suiteki8_l.src = src;
+            document.getElementById('suiteki8_r').innerHTML = '<img src="kansei8.gif">';
+            document.getElementById('suiteki8_t').innerHTML = '<img src="kansei8.gif">';
+            document.getElementById('suiteki8_l').innerHTML = '<img src="kansei8.gif">';
+            break;               
+        case 8:
+            sui3.play();
+            num=0;
+            var src = "kansei9.gif?"+timestamp;
+            suiteki9_r.src = src;
+            suiteki9_t.src = src;
+            suiteki9_l.src = src;
+            document.getElementById('suiteki9_r').innerHTML = '<img src="kansei9.gif">';
+            document.getElementById('suiteki9_t').innerHTML = '<img src="kansei9.gif">';
+            document.getElementById('suiteki9_l').innerHTML = '<img src="kansei9.gif">';
+            break;    
+         default:
+             break;
+     }
+     t+=500;
+     if(t>8000){t=8000;}
+     var timeout = setTimeout("slideshow_timer()",t); 
+ }
+</script>
+</body>
+</html>

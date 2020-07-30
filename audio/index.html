@@ -13,26 +13,18 @@
 <h1>テンプレート</h1>
 
 <video id="video"  playsinline autoplay poster="clear.png" width=80%>
-   <source src="start_1.mp4" type="video/mp4">
+   <source src="start_111.mp4" type="video/mp4">
    <p>※ご利用のブラウザでは再生することができません。</p>
 </video>
 </div>
 <script>
-var count = 0;
-function playvideo() {
-    video.load();
-    setTimeout(function () {
-        video.play();
-    }, 200);
-};
-function add(){
-    count=1;
-}
 
-document.addEventListener('click', add, false);
-if(count==1){
-    playvideo();
-}
+video.load();
+function playvideo() {
+    video.play();
+};
+document.addEventListener('click', playvideo, false);
+
 
 
 </script>

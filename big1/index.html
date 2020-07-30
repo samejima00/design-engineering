@@ -46,6 +46,7 @@
         bottom: 680px;
         left: 330px;
         width: 40%;
+        z-index: 101;
     }
 
     #suiteki5_r {
@@ -74,6 +75,7 @@
         bottom: 710px;
         left: 350px;
         width: 40%;
+        z-index: 101;
     }
 
     #suiteki8_r {
@@ -114,6 +116,7 @@
         left: 20px;
         width: 60%;    /* 横幅を割合で指定 */
         height: auto;
+        z-index: 101;
     }
     #suiteki3_t {
         transform: rotate(90deg);
@@ -122,6 +125,7 @@
         left: 100px;
         width: 40%;    /* 横幅を割合で指定 */
         height: auto;
+        z-index: 101;
     }
     #suiteki4_t {
         transform: rotate(90deg);
@@ -140,6 +144,7 @@
         left: -40px;
         width: 80%;    /* 横幅を割合で指定 */
         height: auto;
+        z-index: 101;
     }
     #suiteki6_t {
         transform: rotate(90deg);
@@ -148,6 +153,7 @@
         left: 100px;
         width: 40%;    /* 横幅を割合で指定 */
         height: auto;
+        z-index: 101;
     }
     #suiteki7_t {
         transform: rotate(90deg);
@@ -166,6 +172,7 @@
         left: 100px;
         width: 40%;    /* 横幅を割合で指定 */
         height: auto;
+        z-index: 101;
     }
     #suiteki9_t {
         transform: rotate(90deg);
@@ -174,6 +181,7 @@
         left: -40px;
         width: 80%;    /* 横幅を割合で指定 */
         height: auto;
+        z-index: 101;
     }
 
     #suiteki1_l {
@@ -183,6 +191,7 @@
         z-index: 100;
         width: 80%;    /* 横幅を割合で指定 */
         height: auto;
+        z-index: 101;
     }
 
     #suiteki2_l {
@@ -204,6 +213,7 @@
     #suiteki4_l {
         position: absolute;
         height: auto;
+        z-index: 101;
         top: 680px;
         left: 330px;
         width: 40%;
@@ -232,6 +242,7 @@
         top: 705px;
         left: 350px;
         width: 40%;
+        z-index: 101;
     }
 
     #suiteki8_l {
@@ -250,6 +261,14 @@
         left: 80px;
         z-index: 100;
         width: 80%;
+    }
+
+    #video{                      /*ここ変えなきゃだぞ*/
+        transform: rotate(90deg);
+        position: absolute;
+        top:110px;
+        left:-100px;
+        width:130%;
     }
 
 </style>
@@ -292,6 +311,11 @@
     <audio id="sui1" src="sui.mp3" preload="auto"  ></audio>
     <audio id="sui2" src="sui2.mp3" preload="auto"  ></audio>
     <audio id="sui3" src="sui3.mp3" preload="auto"  ></audio>
+
+    <video id="video"  playsinline autoplay poster="clear.png" width=80%>
+        <source src="start_111.mp4" type="video/mp4">
+        <p>※ご利用のブラウザでは再生することができません。</p>
+     </video>
 </div>
 <h1>テンプレート</h1>
 <script>
@@ -301,8 +325,35 @@
     var t = 3000;
     var flag = 0;
 
+    document.addEventListener("click", function() { DeviceMotionEvent.requestPermission(); });
+    var aX = 0, aY = 0, aZ = 0, aZ2 = 0;             // ジャイロの値を入れる変数を3個用意
+    video.load();
+    function playvideo() {
+        video.play();
+        setTimeout(function(){t=3000;},17000);
+    };
+
    document.addEventListener('click', clicked, false);  
    //document.addEventListener('touchstart', slideshow_timer, false); 
+
+   video.addEventListener("click",playvideo,false);
+    // ジャイロセンサの値が変化したら実行される deviceorientation イベント
+    window.addEventListener("devicemotion", (dat) => {
+        aX = dat.accelerationIncludingGravity.x;    // x軸の重力加速度（Android と iOSでは正負が逆）
+        aY = dat.accelerationIncludingGravity.y;    // y軸の重力加速度（Android と iOSでは正負が逆）
+        aZ = dat.accelerationIncludingGravity.z;    // z軸の重力加速度（Android と iOSでは正負が逆）
+
+        //txt.innerHTML = Math.abs(aZ-aZ2) + "<br>"+aZ+"<br>"+aZ2;
+        if(Math.abs(aZ-aZ2)>2){
+            var event = document.createEvent( "MouseEvents" ); // イベントオブジェクトを作成
+            event.initEvent("click", false, true); // イベントの内容を設定
+            video.dispatchEvent(event);
+            //setTimeout("clicked()",17000);
+        }
+        aZ2=aZ;
+
+        }
+    );
 
  function clicked(){
     num=0;
@@ -428,9 +479,9 @@
          default:
              break;
      }
-     t+=200;
-     if(t>6000){t=6000;}
-     setTimeout("slideshow_timer()",t); 
+     t+=500;
+     if(t>8000){t=8000;}
+     var timeout = setTimeout("slideshow_timer()",t); 
  }
 </script>
 </body>
